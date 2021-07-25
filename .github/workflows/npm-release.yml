@@ -18,7 +18,11 @@ jobs:
         run: yarn build
       - name: Run tests
         run: yarn test --coverage --verbose
-      - name: Publish to NPM
-        run: yarn publish
+      - name: Release
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > /home/runner/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > /home/runner/work/_temp/.npmrc
+          NPM_TOKEN=$NPM_TOKEN yarn semantic-release
