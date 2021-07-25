@@ -1,5 +1,7 @@
 # **pg-query-object**
 
+[![PG Query Object Package](https://github.com/max10rogerio/pg-query-object/actions/workflows/npm-release.yml/badge.svg)](https://github.com/max10rogerio/pg-query-object/actions/workflows/npm-release.yml)
+
 Run a raw query sql in postgres with object in params
 
 ## **How to use**
@@ -19,7 +21,7 @@ const params: Params = {
 
 const sql = `
   select
-      **,
+      *,
       :limit AS itens_per_page
   from
       table
