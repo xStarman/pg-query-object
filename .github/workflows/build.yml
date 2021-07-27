@@ -17,7 +17,7 @@ jobs:
       - name: Build TS Files
         run: yarn build
       - name: Run Tests
-        run: yarn test:ci
+        run: yarn test:coverage
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
