@@ -1,4 +1,4 @@
-name: PG Query Object Package
+name: build
 on:
   push:
     branches:
