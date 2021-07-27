@@ -12,12 +12,16 @@ jobs:
         with:
           node-version: "14.x"
           registry-url: "https://registry.npmjs.org"
-      - name: Install packages
-        run: yarn
-      - name: Build TS files
+      - name: Install Packages (CI)
+        run: yarn install --frozen-lockfile
+      - name: Build TS Files
         run: yarn build
-      - name: Run tests
-        run: yarn test --coverage --verbose
+      - name: Run Tests
+        run: yarn test:ci
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

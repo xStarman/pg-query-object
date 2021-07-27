@@ -1,8 +1,10 @@
 # **pg-query-object**
 
 [![npm latest version](https://img.shields.io/npm/v/pg-query-object/latest.svg)](https://www.npmjs.com/package/pg-query-object)
+![npm bundle size](https://badgen.net/bundlephobia/min/pg-query-object)
 [![build](https://github.com/max10rogerio/pg-query-object/actions/workflows/build.yml/badge.svg)](https://github.com/max10rogerio/pg-query-object/actions/workflows/build.yml)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Coverage Status](https://coveralls.io/repos/github/max10rogerio/pg-query-object/badge.svg?branch=main)](https://coveralls.io/github/max10rogerio/pg-query-object?branch=main)
 
 Run a raw query sql in postgres with object in params
 
