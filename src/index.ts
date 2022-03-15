@@ -69,8 +69,10 @@ export const toSQL = <T extends object = any>(sql: string, parameters: T): [stri
   for(const [key, value] of entries) {
       const parameter = createParameterKey(key)
       const regex = new RegExp(parameter, 'g')
+      
+      if (!newSql.match(regex)) continue
+   
       const reference = createReference(refIndex)
-
       newSql = newSql.replace(regex, reference)
 
       arrParams.push(value)
